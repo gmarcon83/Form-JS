@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Funções para sempre ter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        function botao() {
+            click();
+        }
+        function lock2() {
+            lock(true);
+        }
+        function unlock2() {
+            lock(false);
+        }
+    </script>
+
+    <script src='js/controle.js'></script>
+    <script src='js/funcParaSempreTer.js'></script>
+
+</head>
+
+<body>
+    <div id="seletor">
+        <fieldset id="opcão">
+            <legend>Escolha a função</legend>
+            <input id="soma" type="radio" name="tipo-funcao" value="soma" onclick="unlock2()">
+            <label for="soma">Soma de 2 números</label><br>
+
+            <input id="subtracao" type="radio" name="tipo-funcao" value="subtracao" onclick="unlock2()">
+            <label for="subtracao">Diferença entre 2 números</label><br>
+
+            <input id="multiplicacao" type="radio" name="tipo-funcao" value="multiplicacao" onclick="unlock2()">
+            <label for="multiplicacao">Produto de 2 números</label><br>
+
+            <input id="divisao" type="radio" name="tipo-funcao" value="divisao" onclick="unlock2()">
+            <label for="divisao">Divisão de 2 números</label><br>
+
+            <input id="fatorial" type="radio" name="tipo-funcao" value="fatorial" onclick="lock2()">
+            <label for="fatorial">Fatorial de 1 número</label><br>
+
+            <input id="raiz-quadrada" type="radio" name="tipo-funcao" value="raiz-quadrada" onclick="lock2()">
+            <label for="raiz-quadrada">Raiz quadrada de 1 número</label><br>
+
+            <input id="potencia" type="radio" name="tipo-funcao" value="potencia" onclick="unlock2()">
+            <label for="potencia">Potenciação de 1 número por outro</label><br>
+        </fieldset>
+        <fieldset id="valores">
+            <legend>Digite os valores</legend>
+            <label for="valor1">Digite o primeiro número</label><br>
+            <input id="valor1" type="number" name="valor1"><br>
+
+            <label for="valor2">Digite o segundo número</label><br>
+            <input id="valor2" type="number" name="valor2"><br>
+            <button onclick="botao()">Calcular!</button>
+        </fieldset>
+        <fieldset id="resposta">
+            <legend>Resposta</legend>
+            <textarea name="resposta" id="caixa-de-resposta" cols="30" rows="8"></textarea>
+        </fieldset>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+#seletor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  max-width: 900px;
+  margin: auto;
+  justify-content: center;
+}
+
+fieldset {
+  display: block;
+}
+
+textarea {
+  resize: none;
+}
