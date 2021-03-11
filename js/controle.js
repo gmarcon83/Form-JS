@@ -12,48 +12,52 @@ window.onload = () => {
 // um dos calculos, de acordo com a opção selecionada.
 function click(){
     let val1, val2, calc;
-    switch (descobrirOpcaoRadio()){
-        case "soma":
-            val1 = parseInt(valor1.value);
-            val2 = parseInt(valor2.value);
-            calc = somar(val1, val2);
-            escreverResultado(calc, "A soma de " + val1+ " e " + val2 + " é: ");
-            break;
-        case "subtracao":
-            val1 = parseInt(valor1.value);
-            val2 = parseInt(valor2.value);
-            calc = subtrair(val1, val2);
-            escreverResultado(calc, "O resto de " + val1+ " menos " + val2 + " é: ");
-            break;
-        case "multiplicacao":
-            val1 = parseInt(valor1.value);
-            val2 = parseInt(valor2.value);
-            calc = multiplicar(val1, val2);
-            escreverResultado(calc, "A multiplicação de " + val1 + " por " + val2 + " é: ");
-            break;
-        case "divisao":
-            val1 = parseInt(valor1.value);
-            val2 = parseInt(valor2.value);
-            calc = dividir(val1, val2);
-            escreverResultado(calc, "A divisão de " + val1 + " por " + val2 + " é: ");
-            break;
-        case "fatorial":
-            val1 = parseInt(valor1.value);
-            calc = fatorear(val1)
-            escreverResultado(calc, val1 + "! é: ");
-            break;
-        case "raiz-quadrada":
-            val1 = parseInt(valor1.value);
-            calc = radiciar(val1)
-            escreverResultado(calc, "A raiz quadrada de " + val1 + " fica: ");
-            break;
-        case "potencia":
-            val1 = parseInt(valor1.value);
-            val2 = parseInt(valor2.value);
-            calc = potenciar(val1, val2);
-            escreverResultado(calc, val1 + " elevado a potência de " + val2 + " fica: ");
-            break;
-    }
+    if (testInput()){
+        switch (descobrirOpcaoRadio()){
+            case "soma":
+                val1 = parseInt(valor1.value);
+                val2 = parseInt(valor2.value);
+                calc = somar(val1, val2);
+                escreverResultado(calc, "A soma de " + val1+ " e " + val2 + " é: ");
+                break;
+            case "subtracao":
+                val1 = parseInt(valor1.value);
+                val2 = parseInt(valor2.value);
+                calc = subtrair(val1, val2);
+                escreverResultado(calc, "O resto de " + val1+ " menos " + val2 + " é: ");
+                break;
+            case "multiplicacao":
+                val1 = parseInt(valor1.value);
+                val2 = parseInt(valor2.value);
+                calc = multiplicar(val1, val2);
+                escreverResultado(calc, "A multiplicação de " + val1 + " por " + val2 + " é: ");
+                break;
+            case "divisao":
+                val1 = parseInt(valor1.value);
+                val2 = parseInt(valor2.value);
+                calc = dividir(val1, val2);
+                escreverResultado(calc, "A divisão de " + val1 + " por " + val2 + " é: ");
+                break;
+            case "fatorial":
+                val1 = parseInt(valor1.value);
+                calc = fatorear(val1)
+                escreverResultado(calc, val1 + "! é: ");
+                break;
+            case "raiz-quadrada":
+                val1 = parseInt(valor1.value);
+                calc = radiciar(val1)
+                escreverResultado(calc, "A raiz quadrada de " + val1 + " fica: ");
+                break;
+            case "potencia":
+                val1 = parseInt(valor1.value);
+                val2 = parseInt(valor2.value);
+                calc = potenciar(val1, val2);
+                escreverResultado(calc, val1 + " elevado a potência de " + val2 + " fica: ");
+                break;
+            }
+        }else{
+            alert("Input Inválido!");
+        }
 }
 
 // Desativa o input 2 conforme o necessário
@@ -74,6 +78,20 @@ function descobrirOpcaoRadio() {
     return nome;
 }
 
+
+// Atualiza o texto da caixa de texto
 function escreverResultado(resultado, textoExtra){
     caixaDeTexto.value = textoExtra + resultado;
+}
+
+// Testa se valor 1 e valor 2 são inputs válidos
+function testInput(){
+    let valid = true;
+    if (!valor1.validity.valid){
+        valid = false;
+    }
+    if (!valor2.validity.valid && !valor2.disabled){
+        valid = false;
+    }
+    return valid;
 }
