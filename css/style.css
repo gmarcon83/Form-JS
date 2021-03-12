@@ -6,9 +6,10 @@ html {
 }
 
 body {
-  background-image: url(../img/bckg.svg);
-  background-size: calc(200% + 2000px);
-  background-position: 60% 0;
+  background-image: url(https://images.unsplash.com/photo-1613169620329-6785c004d900?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNTU2OTM5NA&ixlib=rb-1.2.1&q=85);
+  background-size: cover;
+  height: calc(100vh - 30px);
+  padding-top: 30px;
 }
 
 #seletor {
