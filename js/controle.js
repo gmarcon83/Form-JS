@@ -84,7 +84,7 @@ function escreverResultado(resultado, textoExtra){
     caixaDeTexto.value = textoExtra + resultado;
 }
 
-// Testa se valor 1 e valor 2 são inputs válidos
+// Testa se valor 1 e valor 2 são inputs válidos (numeros)
 function testInput(){
     let valid = true;
     if (!valor1.validity.valid){

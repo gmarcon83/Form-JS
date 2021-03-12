@@ -1,15 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+
+html {
+  font-family: "Ubuntu";
+  font-size: 1.1em;
+}
+
 #seletor {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  max-width: 900px;
+  grid-template-columns: repeat(auto-fill, 350px);
+  max-width: 1050px;
   margin: auto;
   justify-content: center;
 }
 
 fieldset {
   display: block;
+  background-color: rgba(0, 255, 255, 0.178);
+  border-radius: 6px;
+  border: 2px solid rgba(0, 0, 0, 0.479);
 }
 
+fieldset legend {
+  text-shadow: 1px 1px 1px white;
+  font-weight: 500;
+}
+
+#opcão label:hover {
+  font-weight: 500;
+}
+
+#valor1,
+#valor2,
 textarea {
+  font-size: 1.1em;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.479);
+  border-radius: 6px;
+  padding: 5px;
   resize: none;
+}
+
+button {
+  font-size: 1.1em;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.479);
+  border-radius: 6px;
+  padding: 5px;
+  margin-top: 15px;
+}
+
+#opcão,
+#valores {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
